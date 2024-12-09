@@ -1,0 +1,50 @@
+﻿@model IEnumerable<lab12MVC.Models.Company>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Компанії</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Список компаній</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Адреса</th>
+                <th>Кількість співробітників</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in Model)
+            {
+                <tr>
+                    <td>@company.Id</td>
+                    <td>@company.Name</td>
+                    <td>@company.Address</td>
+                    <td>@company.EmployeesCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
